@@ -1,0 +1,1 @@
+Add these 3 files to your Laravel project and then docker compose up -d
