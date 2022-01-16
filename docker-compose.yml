@@ -27,14 +27,14 @@ services:
     image: mysql:8.0
     container_name: mysql
     ports:
-    - '3307:3306'
+    - '3306:3306'
     environment:
         MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
         MYSQL_DATABASE: '${DB_DATABASE}'
         MYSQL_PASSWORD: '${DB_PASSWORD}'
         MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     volumes:
-      - 'geducarmysql:/var/lib/mysql'
+      - 'forge:/var/lib/mysql'
 
   redis:
     image: redis:alpine
@@ -42,8 +42,8 @@ services:
     ports:
       - '6378:6379'
     volumes:
-      - 'geducarmysql:/data'
+      - 'forge:/data'
 
 volumes:
-  geducarmysql:
+  forge:
      driver: local
